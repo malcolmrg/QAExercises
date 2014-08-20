@@ -216,7 +216,7 @@ namespace RepeatingInvoiceTests
                 //Find Invoice To field and enter customer name
                 query = driver.FindElement(By.XPath(Settings.CustomerFieldXPath));
 
-                // Give invoice name that is unique to this test execution and record it in variable for verification later
+                // Give invoice a name that is unique to this test execution and record it in variable for verification later
                 approvedForSendingInvoiceRef = string.Format("Aproved for sending repeating invoice - {0}", System.DateTime.Now.ToString());
                 query.SendKeys(approvedForSendingInvoiceRef);
 
