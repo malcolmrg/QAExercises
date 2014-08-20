@@ -6,7 +6,7 @@ QA Exercises as requested.
 EnpointTests project
 --------------------
 
-The EnpointTests project is a basic console application that shows examples of connecting to the endpoints. The Lister.cs class is a modified example from the official XERO API that includes more detailed output on repeating invoices.
+The EnpointTests project is a basic console application that shows examples of connecting to the organisation endpoints. The Lister.cs class is a modified example taken from the official XERO API that includes more detailed output on repeating invoices.
 
 RepeatingInvoiceTests project
 -----------------------------
