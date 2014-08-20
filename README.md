@@ -1,7 +1,7 @@
 QAExercises
 ===========
 
-QA Exercises
+QA Exercises as requested.
 
 EnpointTests project
 --------------------
