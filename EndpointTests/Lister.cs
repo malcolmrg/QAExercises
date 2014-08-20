@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Xero.Api.Core;
+using Xero.Api.Core.Model;
 
 namespace EndpointTests
 {
@@ -16,6 +17,8 @@ namespace EndpointTests
 
         public void List()
         {
+            // The following code was taken from the Xero API example project "Xero.Api.Example.Counts".
+            // It demonstrates connections to the various critical endpoints and retrieves the applicable data.
             Console.WriteLine("Your organisation is called {0}", _api.Organisation.LegalName);
 
             Console.WriteLine("There are {0} accounts", _api.Accounts.Find().Count());
@@ -38,9 +41,15 @@ namespace EndpointTests
             Console.WriteLine("There are {0} tracking categories", _api.TrackingCategories.Find().Count());
             Console.WriteLine("There are {0} users", _api.Users.Find().Count());
 
-            
             ListReports(_api.Reports.Named, "named");
             ListReports(_api.Reports.Published, "published");
+
+            // Keeping within the theme of repeating invoices, I have included some more detailed information retrieved via the API.
+            Console.WriteLine("\nThe following shows more detail around existing repeating invoices:\n");
+            Console.WriteLine("There are {0} Accounts Payable repeating invoices", _api.RepeatingInvoices.Find().Where(i => i.Type == Xero.Api.Core.Model.Types.InvoiceType.AccountsPayable).Count());
+            Console.WriteLine("There are {0} Accounts Receivable repeating invoices", _api.RepeatingInvoices.Find().Where(i => i.Type == Xero.Api.Core.Model.Types.InvoiceType.AccountsReceivable).Count());
+            Console.WriteLine("There are {0} draft repeating invoices", _api.RepeatingInvoices.Find().Where(i => i.Status == Xero.Api.Core.Model.Status.InvoiceStatus.Draft).Count());
+            Console.WriteLine("There are {0} approved repeating invoices", _api.RepeatingInvoices.Find().Where(i => i.Status == Xero.Api.Core.Model.Status.InvoiceStatus.Authorised).Count());
 
             Console.WriteLine("Done!");
             Console.ReadLine();

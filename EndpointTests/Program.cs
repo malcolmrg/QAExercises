@@ -10,14 +10,13 @@ namespace EndpointTests
     {
         static void Main(string[] args)
         {
-            var user = new ApiUser { Name = Environment.MachineName };
-            var tokenStore = new SqliteTokenStore();
-
+            // Create new API connection. This is a private application so only the signed certificate and consumer key are required. These are found in the App.config.
             var api = new Core()
             {
-                UserAgent = "Xero Api - Listing example"
+                UserAgent = "Xero Api - Endpoint Listing example"
             };
             
+            // Instantiate new Lister class that will list information by connecting to the various endpoints.
             new Lister(api).List(); 
         }
     }

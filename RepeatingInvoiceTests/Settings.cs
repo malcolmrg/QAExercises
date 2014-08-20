@@ -24,6 +24,15 @@ namespace RepeatingInvoiceTests
             get { return ConfigurationManager.AppSettings["LoginPassword"]; }
         }
 
+        public static string LoginEmailFieldId
+        {
+            get { return ConfigurationManager.AppSettings["LoginEmailFieldId"]; }
+        }
+        public static string LoginPasswordFieldId
+        {
+            get { return ConfigurationManager.AppSettings["LoginPasswordFieldId"]; }
+        }
+
         public static string CustomerFieldXPath
         {
             get { return ConfigurationManager.AppSettings["CustomerFieldXPath"]; }
@@ -37,6 +46,16 @@ namespace RepeatingInvoiceTests
         public static string DescriptionPopupTextboxXPath
         {
             get { return ConfigurationManager.AppSettings["DescriptionPopupTextboxXPath"]; }
+        }
+
+        public static string DueDateDayFieldId
+        {
+            get { return ConfigurationManager.AppSettings["DueDateDayFieldId"]; }
+        }
+
+        public static string StartDateFieldId
+        {
+            get { return ConfigurationManager.AppSettings["StartDateFieldId"]; }
         }
 
         public static string SaveButtonXPath
@@ -57,6 +76,21 @@ namespace RepeatingInvoiceTests
         public static string ApprovedForSendingSaveButtonXPath
         {
             get { return ConfigurationManager.AppSettings["ApprovedForSendingSaveButtonXPath"]; }
+        }
+
+        public static string saveAsDraftFieldId
+        {
+            get { return ConfigurationManager.AppSettings["saveAsDraftFieldId"]; }
+        }
+
+        public static string saveAsAutoApprovedFieldId
+        {
+            get { return ConfigurationManager.AppSettings["saveAsAutoApprovedFieldId"]; }
+        }
+
+        public static string saveAsAutoApprovedAndEmailFieldId
+        {
+            get { return ConfigurationManager.AppSettings["saveAsAutoApprovedAndEmailFieldId"]; }
         }
     }
 }
