@@ -200,12 +200,9 @@ namespace RepeatingInvoiceTests
                 query = driver.FindElement(By.Id(Settings.saveAsAutoApprovedAndEmailFieldId));
                 query.Click();
 
-                // Edit message popup screen is displayed. Wait until elements are present.
+                // Edit message popup screen is displayed. Wait until elements are present before writing value
                 wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
-                element = wait.Until<IWebElement>((d) =>
-                {
-                    return d.FindElement(By.XPath(Settings.EditMessageToAddress));
-                });
+                wait.Until(ExpectedConditions.ElementIsVisible(By.XPath(Settings.EditMessageToAddress)));
 
                 // Find the email to address by XPath
                 query = driver.FindElement(By.XPath(Settings.EditMessageToAddress));
